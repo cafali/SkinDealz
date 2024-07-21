@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "SkinDealz",
+  "version": "1.4",
+  "description": "SkinDealz streamlines CS2 offer sniping. Hold Shift while adding skins to your cart, SkinDealz automation takes care of the rest. (version AT by cafali)",
+  "permissions": [
+    "activeTab"
+  ],
+  "action": {
+    "default_popup": "web/popup.html", 
+    "default_icon": {
+      "16": "icon/icon16.png",
+      "38": "icon/icon38.png",     
+      "48": "icon/icon48.png",
+      "128": "icon/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icon/icon16.png",
+    "38": "icon/icon38.png",     
+    "48": "icon/icon48.png",
+    "128": "icon/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://skinport.com/*"],
+      "js": ["content.js"]
+    },
+    {
+      "matches": ["https://skinport.com/cart*"],
+      "js": ["handler.js"]
+    }
+  ]
+}
