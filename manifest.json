@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "SkinDealz",
   "version": "1.4",
-  "description": "SkinDealz streamlines CS2 offer sniping. Hold Shift while adding skins to your cart, SkinDealz automation takes care of the rest. (version AT by cafali)",
+  "description": "SkinDealz streamlines CS2 offer sniping. Hold Shift while adding skins to your cart, SkinDealz automation takes care of the rest.",
   "permissions": [
     "activeTab"
   ],
