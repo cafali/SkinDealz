@@ -23,7 +23,7 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://skinport.com/*"],
+      "matches": ["https://skinport.com/market?sort=date&order=desc*"],
       "js": ["content.js"]
     },
     {
@@ -31,12 +31,8 @@
       "js": ["handler.js"]
     },
     {
-      "matches": ["https://skinport.com/*"],
-      "js": ["filter.js"]
-    },
-    {
       "matches": ["https://skinport.com/market?sort=date&order=desc*"],
-      "js": ["website.js"]
+      "js": ["config.js"]
     }
   ]
 }

@@ -19,10 +19,10 @@ window.addEventListener('load', function() {
   }
 });
 
-//checkboxes
+//check checkboxes (tradelock + cancel)
 function checkAllCheckboxes() {
-  const tradeLockCheckbox = document.querySelector('#cb-tradelock-1');
-  const cancellationCheckbox = document.querySelector('#cb-cancellation-2');
+  const tradeLockCheckbox = document.querySelector('#cb-tradelock-1');  //tradelock box
+  const cancellationCheckbox = document.querySelector('#cb-cancellation-2'); //canceletion box
   
   if (tradeLockCheckbox && !tradeLockCheckbox.checked) {
     tradeLockCheckbox.click();
@@ -32,7 +32,7 @@ function checkAllCheckboxes() {
   }
 }
 
-//checkout
+//checkout button in cart when all boxes are checked
 window.onload = function() {
     function clickProceedToCheckout() {
         var buttons = document.querySelectorAll('button');
@@ -47,7 +47,7 @@ window.onload = function() {
 };
 
 
-//load handler.js
+//load handler.js to finish transaction
 function loadHandlerScript() {
     const handlerScript = document.createElement('script');
     handlerScript.src = chrome.runtime.getURL('handler.js');
