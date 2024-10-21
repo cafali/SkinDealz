@@ -1,3 +1,4 @@
+
 function replaceButton() {
     var button = document.querySelector('.LiveBtn.LiveBtn--isActive');
 

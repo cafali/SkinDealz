@@ -3,176 +3,162 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SkinDealz Extension</title>
+  <title>About SkinDealz</title>
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      padding: 15px; /* Adjusted padding */
-      background: linear-gradient(135deg, #f23a7f, #000000); /* Pink to black gradient background */
-      border-radius: 15px; /* Adjusted rounded border */
-      color: white; /* Text color */
-      position: relative; /* Position relative for overlay */
-      width: 75%; /* Reduce width by 25% */
-      margin: 0 auto; /* Center horizontally */
+      background: linear-gradient(135deg, #1d1d1d, #000000);
+      color: white;
+      margin: 0;
       display: flex;
-      flex-direction: column;
-      align-items: center;
       justify-content: center;
-      min-height: 100vh; /* Full viewport height */
+      align-items: center;
+      min-height: 100vh;
     }
 
-    button {
-      background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
-      border: none; /* Remove border */
-      border-radius: 15px; /* Adjusted rounded border */
-      padding: 15px; /* Adjusted padding */
-      font-family: "Bahnschrift", sans-serif; /* Font family */
-      font-size: 20px; /* Adjusted font size */
-      color: white; /* Text color */
-      margin-top: 15px; /* Adjusted margin top */
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Text shadow */
-      cursor: pointer; /* Cursor style */
-      text-align: left; /* Align text to the left */
-      width: 100%; /* Make the button full width */
-    }
-
-    button:hover {
-      background-color: rgba(0, 0, 0, 0.66); /* Semi-transparent background on hover */
-    }
-
-    #icon {
-      display: block;
-      margin: 0 auto;
-      width: 102px; /* Adjusted width to 75% of original */
-      height: 102px; /* Adjusted height to maintain aspect ratio */
-      border-radius: 50%; /* Circular shape */
-      border: 6px solid #fff; /* Adjusted border thickness */
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); /* Adjusted shadow */
-      position: relative; /* Position relative for z-index */
-      z-index: 1; /* Move the logo in front */
+    #container {
+      background-color: rgba(29, 29, 29, 0.8);
+      padding: 20px;
+      border-radius: 15px;
+      width: 90%;
+      max-width: 800px;
+      text-align: center;
     }
 
     #statusIndicator {
-      display: block;
-      text-align: center;
-      font-weight: bold; /* Set font weight to bold */
-      background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
-      padding: 7.5px; /* Adjusted padding */
-      border-radius: 15px; /* Adjusted rounded border */
-      font-family: "Bahnschrift", sans-serif; /* Font family */
-      font-size: 20px; /* Adjusted font size */
-      margin-top: 15px; /* Adjusted margin top */
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Text shadow */
+      margin-bottom: 20px;
     }
 
-    h1 {
-      text-align: center; /* Center align the h1 text */
-      text-transform: uppercase; /* Uppercase text */
-      font-size: 38px; /* Adjusted font size */
-      letter-spacing: 1.5px; /* Adjusted letter spacing */
-      margin-top: 30px; /* Adjusted margin top */
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Text shadow */
+    button {
+      background-color: rgba(0, 0, 0, 0.6);
+      border: none;
+      border-radius: 15px;
+      padding: 15px;
+      font-family: "Bahnschrift", sans-serif;
+      font-size: 18px;
+      color: white;
+      margin-top: 15px;
+      cursor: pointer;
+      width: 100%;
+      text-align: left;
+    }
+
+    button:hover {
+      background-color: rgba(0, 0, 0, 0.553);
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-top: 15px;
     }
 
     p {
-      font-size: 18px; /* Adjusted font size */
-      margin-top: 15px; /* Adjusted margin top */
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Text shadow */
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    ol {
+      text-align: left;
     }
 
     a {
-      color: #fff; /* Link color */
-      text-decoration: none; /* Remove underline */
-      font-weight: bold; /* Set font weight to bold */
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
     }
 
     a:hover {
-      text-decoration: underline; /* Underline on hover */
+      text-decoration: underline;
+    }
+
+    .license {
+      font-size: 14px;
+      margin-top: 20px;
+    }
+
+    /* Media Query for smaller screens */
+    @media (max-width: 768px) {
+      h2 {
+        font-size: 20px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+
+      button {
+        font-size: 16px;
+        padding: 10px;
+      }
+
+      img {
+        width: 70%; /* Ensure the image scales well on smaller screens */
+      }
+
+      #container {
+        padding: 15px;
+      }
+    }
+
+    /* Media Query for very small screens like mobile phones */
+    @media (max-width: 480px) {
+      h2 {
+        font-size: 18px;
+      }
+
+      p {
+        font-size: 12px;
+      }
+
+      button {
+        font-size: 14px;
+        padding: 8px;
+      }
+
+      img {
+        width: 100%; /* Ensure image takes full width on very small screens */
+      }
+
+      #container {
+        padding: 10px;
+      }
     }
   </style>
 </head>
 <body>
-  <img id="icon" src="icon/icon1000.png" alt="Icon"> <!-- Your icon image -->
-  <span id="statusIndicator"><img src="\web\icon\webbanner.png" alt="Web Banner" style="width: 20%;">  </span> <!-- Status indicator -->
+  <div id="container">
+    <div id="statusIndicator">
+      <img src="icon/webbanner.png" alt="Web Banner" style="width: 50%;">
+    </div>
 
-  <div id="content">
     <button>
       <h2>What is SkinDealz?</h2>
       <p>SkinDealz is a browser extension aimed at simplifying deal-hunting in various gaming markets, particularly on the LIVE market. By holding the SHIFT key while adding items to your CART, SkinDealz automates the purchasing process, reducing the time to under 2900ms for the entire procedure.</p>
-<p>It covers a range of gaming markets including Counter-Strike 2, Team Fortress 2, Dota 2, and Rust.</p>
-
-
-
+      <p>It covers a range of gaming markets including Counter-Strike 2, Team Fortress 2, Dota 2, and Rust.</p>
 
       <h2>Quick Start Guide</h2>
       <ol>
         <li><strong>LANGUAGE:</strong> ENSURE THAT THE SITE LANGUAGE IS SET TO ENGLISH.</li>
-        <li><strong>EXTENSION:</strong> PRESS THE "SHIFT" KEY WHILE ADDING ITEMS TO YOUR CART TO SEAMLESSLY LAUNCH THE EXTENSION.</li>
+        <li><strong>EXTENSION:</strong> PRESS THE "SHIFT" KEY WHILE ADDING ITEMS TO YOUR CART</li>
         <li><strong>ENJOY:</strong> SIT BACK AND RELAX!</li>
       </ol>
 
-   
+      <h2>Keyboard Shortcuts</h2>
+      <ol>
+        <li><strong>SHIFT+C</strong> Remove items cheaper than 0.13€ (LIVE PAGE)</li>
+        <li><strong>SHIFT+X</strong> Remove items with discounts lower than 21% (LIVE PAGE)</li>
+      </ol>
+    </button>
 
+    <div style="text-align: center; margin-top: 10px;">
+      <a href="https://support.google.com/chrome_webstore/answer/2664769?hl=en" target="_blank">Manage Browser Extensions</a>
+    </div>
 
-      <h2>Thank you for choosing SkinDealz.</h2>
-      <p>Happy shopping!</p>
-
-<h2>FAQ</h2>
-<p><strong>Q: Does SkinDealz collect any user data?</strong><br>
-A: No.</p>
-
-<p><strong>Q: How do I activate SkinDealz after installation?</strong><br>
-A: Read the Quick Start Guide.</p>
-
-<p><strong>Q: What browsers does SkinDealz support?</strong><br>
-A: All chromium-based desktop browsers.</p>
-
-<p><strong>Q: Does SkinDealz operate on devices running Android or iOS?</strong><br>
-A: SkinDealz is exclusively compatible with devices equipped with a desktop version of a Chromium-based browser.</p>
-
-<p><strong>Q: Can I customize the SkinDealz functionality/source code?</strong><br>
-A: Editing the extension's source code is not recommended unless you're sure of what you're doing.</p>
-
-<p><strong>Q: How do I uninstall SkinDealz?</strong><br>
-A: Please refer to "Manage Browser Extensions" at the bottom of this page, for guidance on handling extensions.</p>
-
-<p><strong>Q: How long does it typically take to finalize a purchase?</strong><br>
-A: Around 2500ms-2800ms.</p>
-
-<p><strong>Q: What are the requirements for an item to be eligible for automation by SkinDealz?</strong><br>
-A: The item should be on tradehold + discounted/reduced in price.</p>
-
-<p><strong>Q: Is there a limit to the number of items I can automate with SkinDealz?</strong><br>
-A: SkinDealz does not impose a limit on the number of items you can automate, as long as they meet the eligibility criteria.</p>
-
-
-
-      
-	  <h2>Legal</h2>
-      	<ol>
-        1. The SkinDealz browser extension is provided "as is," without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, and non-infringement.
-	</ol>
-
-	<ol>        
-	2. In no event shall the authors or copyright holders be liable for any claim, damages, or other liability, whether in an action of contract, tort, or otherwise, arising from, out of, or in connection with the SkinDealz 	extension or the use or other dealings in the SkinDealz extension.</li>
-	</ol>
-	
-	<ol>       
-	3. Use of the SkinDealz extension is at your own risk, and you assume full responsibility for any consequences arising from such use.
-      	</ol>
-    
-</button>
-
-<div style="text-align: center; font-size: 1.5em; margin-top: 10px;margin-bottom: 7px;">
-    <a href="https://support.google.com/chrome_webstore/answer/2664769?hl=en" target="_blank"><u>Manage Browser Extensions</u></a>
-</div>
-
-<span id="statusIndicator"><img src="\web\icon\webbanner.png" alt="Web Banner" style="width: 20%;">  </span> <!-- Status indicator -->
-
-build: 07/2024 - SkinDealz v. 1.4
-
-
-
+    <p>Build: 10/2024 - SkinDealz v. 1.5.1 for EU AT (Austria)</p>
+    <p class="license">MIT License</p>
+    <p class="license">Copyright (c) 2024 cafali</p>
   </div>
 </body>
 </html>
+
+
