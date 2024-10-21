@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "SkinDealz",
-  "version": "1.5.1",
-  "description": "Hold Shift while adding skins to your cart, SkinDealz automation takes care of the rest. (AT by cafali)",
+  "version": "1.5.2",
+  "description": "Hold Shift while adding skins to your cart, SkinDealz automation takes care of the rest.",
   "permissions": [
     "activeTab"
   ],
@@ -24,15 +24,15 @@
   "content_scripts": [
     {
       "matches": ["https://skinport.com/market?sort=date&order=desc*"],
-      "js": ["content.js"]
+      "js": ["script/content.js"]
     },
     {
       "matches": ["https://skinport.com/cart*"],
-      "js": ["handler.js"]
+      "js": ["script/de/handler.js"]
     },
     {
       "matches": ["https://skinport.com/market?sort=date&order=desc*"],
-      "js": ["config.js"]
+      "js": ["script/config.js"]
     }
   ]
 }

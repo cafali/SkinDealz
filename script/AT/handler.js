@@ -1,0 +1,83 @@
+//region AT
+
+//select EPSButton
+function clickEPSButton() {
+    const epsButton = document.querySelector('.adyen-checkout__payment-method--eps button');
+    if (epsButton) {
+        epsButton.click();
+    } else {
+        console.error('EPS button not found');
+    }
+}
+
+//click EPSButton
+function handleMutation(mutationsList, observer) {
+    for(const mutation of mutationsList) {
+        if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+            if (document.querySelector('.adyen-checkout__payment-method--eps')) {
+                observer.disconnect();
+                clickEPSButton();
+                break;
+            }
+        }
+    }
+}
+
+const observerOptions = { childList: true, subtree: true };
+
+const observer = new MutationObserver(handleMutation);
+
+observer.observe(document.body, observerOptions);
+
+//dropdown bank list 
+function checkAndSelect() {
+    var dropdown = document.querySelector('.adyen-checkout__dropdown__list');
+    var options = dropdown ? dropdown.querySelectorAll('.adyen-checkout__dropdown__element') : null;
+    if (dropdown && options && options.length > 0) {
+        console.log("Dropdown and options are present. Proceeding with selection...");
+        options.forEach(function(option) {
+            if (option.textContent.trim() === 'BAWAG P.S.K. Gruppe') {
+                option.setAttribute('aria-selected', 'true');
+                option.click();
+                console.log("BAWAG GROUP option selected.");
+            }
+        });
+    } else {
+        console.log("Dropdown or options are missing. Waiting...");
+        setTimeout(checkAndSelect, 2000);
+    }
+}
+
+checkAndSelect();
+
+//search for any bank (in thi case bawag)
+function clickButton() {
+    const buttonSelector = '.adyen-checkout__button.adyen-checkout__button--pay';
+    const textContent = 'Continue to BAWAG P.S.K. Gruppe';
+    const buttons = document.querySelectorAll(buttonSelector);
+    buttons.forEach(button => {
+        if (button.textContent.trim() === textContent) {
+            button.click();
+        }
+    });
+}
+
+//force click - repeat every 700s 5 times
+function continuouslyClickButton(times) {
+    let count = 0;
+    const interval = setInterval(() => {
+        if (count < times) {
+            clickButton();
+            count++;
+        } else {
+            clearInterval(interval);
+        }
+    }, 700);
+}
+
+continuouslyClickButton(5);
+
+//redirect to orders
+setTimeout(function() {
+    window.location.href = 'https://skinport.com/account/orders';
+}, 4000);
