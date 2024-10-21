@@ -55,7 +55,7 @@ body::after {
       z-index: 1; /* Move the logo in front */
     }
 
-    #statusIndicator {
+    #goToLiveBtn {
       display: block;
       text-align: center;
       font-weight: bold; /* Set font weight to bold */
@@ -67,7 +67,7 @@ body::after {
       margin-top: 15px; /* Adjusted margin top */
     }
 
-    #statusIndicator:hover {
+    #goToLiveBtn:hover {
   background-color: #111111; /* Darker semi-transparent background on hover */
 }
 
@@ -95,12 +95,14 @@ body::after {
       text-decoration: underline; /* Underline on hover */
     }
   </style>
+  
 </head>
 <body>
   <img id="icon" src="assets/popup.png" alt="Icon"> <!-- Your icon image -->
   <h1>SkinDealz Extension</h1>
 
-  <span id="statusIndicator"><a href="https://skinport.com/market?sort=date&order=desc" target="_blank" id="goToLiveBtn">GO TO LIVE</a></span>
+<a href="https://skinport.com/market?sort=date&order=desc" target="_blank" id="goToLiveBtn">GO TO LIVE</a>
+  
 
 </span> <!-- Status indicator -->
 <p>SkinDealz is officially licensed under the MIT License, permitting unrestricted use, modification, and distribution.</p>
@@ -109,3 +111,4 @@ body::after {
 <img src="\web\assets\webbanner.png" alt="Web Banner" style="width: 100%;">
 </body>
 </html>
+

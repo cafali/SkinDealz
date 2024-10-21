@@ -1,4 +1,16 @@
-//checkboxes & cart settings
+//global live settings, checkboxes & cart settings
+
+//LIVE everywhere
+setTimeout(() => {
+  const marketLink = document.querySelector('.HeaderContainer-link.HeaderContainer-link--market');
+  const liveLink = document.createElement('a');
+  liveLink.textContent = 'Live';
+  liveLink.href = 'https://skinport.com/market?sort=date&order=desc';
+  liveLink.className = 'HeaderContainer-link';
+  liveLink.style.marginLeft = '0px';
+
+  marketLink.parentNode.insertBefore(liveLink, marketLink.nextSibling);
+}, 500); // 100 ms delay
 
 //shift to cart
 function handleAddToCartClick() {
@@ -10,7 +22,6 @@ document.addEventListener("click", function(event) {
     handleAddToCartClick();
   }
 });
-
 
 //go to cart
 window.addEventListener('load', function() {
@@ -45,7 +56,6 @@ window.onload = function() {
 
     setTimeout(clickProceedToCheckout, 500);
 };
-
 
 //load handler.js to finish transaction
 function loadHandlerScript() {

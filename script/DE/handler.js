@@ -1,4 +1,4 @@
-//region eu germany
+//region DE
 
 function clickOnlineBankTransferButton() {
     const bankTransferButton = document.querySelector('.adyen-checkout__payment-method--directEbanking button');
@@ -55,5 +55,5 @@ setTimeout(clickButtonWithDelay, 1500);
 
 
 setTimeout(function() {
-    window.location.href = 'https://skinport.com/account/orders';
-}, 9000);
+    window.open('https://skinport.com/account/orders', '_blank');
+}, 4000);

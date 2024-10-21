@@ -77,7 +77,7 @@ function continuouslyClickButton(times) {
 
 continuouslyClickButton(5);
 
-//redirect to orders
 setTimeout(function() {
-    window.location.href = 'https://skinport.com/account/orders';
+    window.open('https://skinport.com/account/orders', '_blank');
 }, 4000);
+
