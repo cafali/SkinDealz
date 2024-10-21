@@ -1,4 +1,6 @@
-// Price Filter (Lowest Price)
+//webiste item filter
+
+//price filter (lowest price)
 function hideItemsBasedOnPrice() {
     let items = document.querySelectorAll('.CatalogPage-item.CatalogPage-item--grid');
     let itemsToHide = [];
@@ -10,7 +12,7 @@ function hideItemsBasedOnPrice() {
             let priceText = priceElement.innerHTML.replace(',', '.').replace(/[^\d.]/g, '');
             let price = parseFloat(priceText);
 
-            if (price < 0.13) { // Adjust price (if < 0.XX then hide) (X.XX / XX.XX)
+            if (price < 0.13) { // adjust price (if < 0.XX then hide) (X.XX / XX.XX)
                 itemsToHide.push(item);
             }
         }
@@ -21,11 +23,11 @@ function hideItemsBasedOnPrice() {
         if (index < itemsToHide.length) {
             itemsToHide[index].style.display = 'none';
             index++;
-            setTimeout(hideNextItem, 100); // 100ms delay between each item
+            setTimeout(hideNextItem, 100); // 100ms delay between each item (hide delay)
         }
     }
 
-    hideNextItem(); // Start hiding items
+    hideNextItem(); // start hiding items
 }
 
 // SHIFT + C
@@ -37,9 +39,7 @@ document.addEventListener('keydown', function(event) {
 });
 
 
-
-
-// Percent Filter
+// percent filter
 function hideLowDiscountItems() {
     const items = Array.from(document.querySelectorAll('.CatalogPage-item'));
     let index = 0;
@@ -58,7 +58,7 @@ function hideLowDiscountItems() {
             }
 
             index++;
-            setTimeout(hideNextItem, 10); // Adjust delay (ms)
+            setTimeout(hideNextItem, 10); // adjust delay (ms)
         }
     }
 

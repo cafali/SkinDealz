@@ -1,51 +1,6 @@
+//checkboxes & cart settings
 
-function replaceButton() {
-    var button = document.querySelector('.LiveBtn.LiveBtn--isActive');
-
-    if(button) {
-        button.innerHTML = 'LIVE by SkinDealz';
-        button.style.backgroundColor = '#ed407a';
-        button.style.borderColor = '#ed407a';
-    } else {
-        console.log("Button not found.");
-    }
-}
-
-setTimeout(replaceButton, 3000);
-
-setTimeout(function() {
-    var svgLogo = document.querySelector('.HeaderContainer-logo.logo');
-    if (svgLogo) {
-        var newLogoLink = document.createElement('a');
-        newLogoLink.setAttribute('class', 'HeaderContainer-logoLink');
-        newLogoLink.setAttribute('aria-label', 'Skinport');
-        newLogoLink.setAttribute('href', '/');
-        
-        var logoImg = document.createElement('img');
-        logoImg.setAttribute('src', 'https://i.imgur.com/BKhM7JR.png');
-        logoImg.setAttribute('alt', 'Skinport Logo');
-        logoImg.setAttribute('class', 'HeaderContainer-logo logo');
-        
-        newLogoLink.appendChild(logoImg);
-        
-        svgLogo.parentNode.replaceChild(newLogoLink, svgLogo);
-    }
-}, 1000);
-
-function clickLiveButton() {
-    const liveButton = document.querySelector('.LiveBtn');
-
-    if (liveButton) {
-        liveButton.click();
-    } else {
-        console.log("Live button not found.");
-    }
-}
-
-if (window.location.href === "https://skinport.com/market?sort=date&order=desc") {
-    setTimeout(clickLiveButton, 1000);
-}
-
+//shift to cart
 function handleAddToCartClick() {
   window.location.href = "https://skinport.com/cart";
 }
@@ -56,6 +11,15 @@ document.addEventListener("click", function(event) {
   }
 });
 
+
+//go to cart
+window.addEventListener('load', function() {
+  if (window.location.href === "https://skinport.com/cart") {
+    setTimeout(checkAllCheckboxes, 500);
+  }
+});
+
+//checkboxes
 function checkAllCheckboxes() {
   const tradeLockCheckbox = document.querySelector('#cb-tradelock-1');
   const cancellationCheckbox = document.querySelector('#cb-cancellation-2');
@@ -68,12 +32,7 @@ function checkAllCheckboxes() {
   }
 }
 
-window.addEventListener('load', function() {
-  if (window.location.href === "https://skinport.com/cart") {
-    setTimeout(checkAllCheckboxes, 500);
-  }
-});
-
+//checkout
 window.onload = function() {
     function clickProceedToCheckout() {
         var buttons = document.querySelectorAll('button');
@@ -87,6 +46,8 @@ window.onload = function() {
     setTimeout(clickProceedToCheckout, 500);
 };
 
+
+//load handler.js
 function loadHandlerScript() {
     const handlerScript = document.createElement('script');
     handlerScript.src = chrome.runtime.getURL('handler.js');

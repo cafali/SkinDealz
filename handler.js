@@ -71,9 +71,9 @@ function continuouslyClickButton(times) {
 
 continuouslyClickButton(5);
 
-
-setTimeout(function() {
-    window.location.href = 'https://skinport.com/account/orders';
-}, 4000);
+//redirect to orders
+//setTimeout(function() {
+//    window.location.href = 'https://skinport.com/account/orders';
+//}, 4000);
 
 
