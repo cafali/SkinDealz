@@ -79,5 +79,5 @@ continuouslyClickButton(5);
 
 setTimeout(function() {
     window.open('https://skinport.com/market?sort=date&order=desc', '_self');
-}, 4000);
+}, 4500);
 
