@@ -55,5 +55,5 @@ setTimeout(clickButtonWithDelay, 1500);
 
 
 setTimeout(function() {
-    window.open('https://skinport.com/account/orders', '_blank');
+    window.open('https://skinport.com/market?sort=date&order=desc', '_self');
 }, 4000);
