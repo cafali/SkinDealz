@@ -1,11 +1,11 @@
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      padding: 15px; /* Adjusted padding */
-      background: linear-gradient(135deg, #1d1d1d, #000000); /* Pink to black gradient background */
-      border-radius: 15px; /* Adjusted rounded border */
-      color: white; /* Text color */
-      position: relative; /* Position relative for overlay */
-      width: 75%; /* Reduce width by 25% */
+      padding: 15px; 
+      background: linear-gradient(135deg, #1d1d1d, #000000); 
+      border-radius: 15px; 
+      color: white; 
+      position: relative; 
+      width: 75%; 
     }
 
 /* dots pattern overlay */
@@ -19,10 +19,10 @@ body::after {
   background-image: 
     repeating-linear-gradient(
       0deg,
-      rgba(255, 255, 255, 0.1) 0%, /* Start color */
-      rgba(255, 255, 255, 0.1) 10%, /* End color */
-      transparent 10%, /* Gap */
-      transparent 20% /* End of gap */
+      rgba(255, 255, 255, 0.1) 0%, 
+      rgba(255, 255, 255, 0.1) 10%, 
+      transparent 10%, 
+      transparent 20% 
     ),
     repeating-linear-gradient(
       90deg,
@@ -31,59 +31,59 @@ body::after {
       transparent 10%,
       transparent 20%
     );
-  background-size: 100% 20px, 20px 100%; /* Adjusted size for both directions */
-  z-index: -1; /* Move the overlay behind */
-  opacity: 0.2; /* Optional: Adjust overall opacity */
+  background-size: 100% 20px, 20px 100%; 
+  z-index: -1; 
+  opacity: 0.2; 
 }
 
 
     #icon {
       display: block;
       margin: 0 auto;
-      width: 102px; /* Adjusted width to 75% of original */
-      height: 102px; /* Adjusted height to maintain aspect ratio */
-      border-radius: 50%; /* Circular shape */
-      border: 6px solid #ffffff; /* Adjusted border thickness */
-      position: relative; /* Position relative for z-index */
-      z-index: 1; /* Move the logo in front */
+      width: 102px; 
+      height: 102px; 
+      border-radius: 50%; 
+      border: 6px solid #ffffff; 
+      position: relative; 
+      z-index: 1; 
     }
 
     #goToLiveBtn {
       display: block;
       text-align: center;
-      font-weight: bold; /* Set font weight to bold */
-      background-color: #f23a7e; /* Semi-transparent background */
-      padding: 7.5px; /* Adjusted padding */
-      border-radius: 15px; /* Adjusted rounded border */
-      font-family: "Bahnschrift", sans-serif; /* Font family */
-      font-size: 18px; /* Adjusted font size */
-      margin-top: 15px; /* Adjusted margin top */
+      font-weight: bold; 
+      background-color: #f23a7e; 
+      padding: 7.5px; 
+      border-radius: 15px; 
+      font-family: "Bahnschrift", sans-serif; 
+      font-size: 18px; 
+      margin-top: 15px; 
     }
 
     #goToLiveBtn:hover {
-  background-color: #111111; /* Darker semi-transparent background on hover */
+  background-color: #111111; 
 }
 
     h1 {
-      text-align: center; /* Center align the h1 text */
-      text-transform: uppercase; /* Uppercase text */
-      font-size: 27px; /* Adjusted font size */
-      letter-spacing: 1.5px; /* Adjusted letter spacing */
-      margin-top: 30px; /* Adjusted margin top */
+      text-align: center; 
+      text-transform: uppercase; 
+      font-size: 27px; 
+      letter-spacing: 1.5px; 
+      margin-top: 30px; 
     }
 
     p {
-      text-align: center; /* Center align the paragraph */
-      font-size: 13.5px; /* Adjusted font size */
-      margin-top: 15px; /* Adjusted margin top */
+      text-align: center;
+      font-size: 13.5px; 
+      margin-top: 15px; 
     }
 
     a {
-      color: #fff; /* Link color */
-      text-decoration: none; /* Remove underline */
-      font-weight: bold; /* Set font weight to bold */
+      color: #fff; 
+      text-decoration: none; 
+      font-weight: bold; 
     }
 
     a:hover {
-      text-decoration: underline; /* Underline on hover */
+      text-decoration: underline; 
     }
