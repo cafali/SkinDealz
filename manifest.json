@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "SkinDealz",
-  "version": "1.5.3",
+  "version": "1.5.4",
   "description": "Hold Shift while adding skins to your cart, SkinDealz automation takes care of the rest.",
   "permissions": [
     "activeTab"

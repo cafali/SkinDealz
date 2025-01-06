@@ -137,7 +137,17 @@ document.addEventListener('keydown', function(event) {
 });
 
 
-
+//SHIFT + T (Scroll TOP)
+document.addEventListener('keydown', function(event) {
+    if (event.shiftKey && event.key === 'T') {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      });
+    }
+  });
+  
 
 
 
