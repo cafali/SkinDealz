@@ -25,3 +25,7 @@ const klarnaContinueClickInterval = setInterval(() => {
         clearInterval(klarnaContinueClickInterval); // Stop the interval after clicking
     }
 }, 400); // Check every X ms
+
+setTimeout(function() {
+    window.open('https://skinport.com/market?sort=date&order=desc', '_self');
+}, 4500); //opens main site to market
