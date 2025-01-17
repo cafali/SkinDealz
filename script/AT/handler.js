@@ -50,7 +50,7 @@ function checkAndSelect() {
 
 checkAndSelect();
 
-//search for any bank (in thi case bawag)
+//search for any bank (in this case bawag)
 function clickButton() {
     const buttonSelector = '.adyen-checkout__button.adyen-checkout__button--pay';
     const textContent = 'Continue to BAWAG P.S.K. Gruppe';
