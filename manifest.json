@@ -27,6 +27,10 @@
       "js": ["script/content.js"]
     },
     {
+      "matches": ["https://skinport.com/*"],
+      "js": ["script/grabber.js"]
+    },
+    {
       "matches": ["https://skinport.com/cart*"],
       "js": ["script/at/handler.js"]
     },
