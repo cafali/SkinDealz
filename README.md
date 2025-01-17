@@ -1,4 +1,5 @@
-![Skindealz banner](https://github.com/user-attachments/assets/3b2fd290-1b63-4106-8091-559b8a8faaba)
+
+![Skindealzbanner](https://github.com/user-attachments/assets/26def360-7e46-47f1-9ba2-cf1a088364d7)
 
 ## SkinDealz Extension:
 
