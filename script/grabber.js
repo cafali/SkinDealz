@@ -1,57 +1,50 @@
+//  Grabber 2.0
+
 // Config
-const targetName = "xxxxxxxxxxxx";  // Name of item (capitalization matters)
-const maxItemsLimit = 15;  // Max amount of selected items > (default 15)
+const targetName = "Natus Vincere | 2020 RMR"; // Name of item (case-sensitive)
+const maxItemsLimit = 15; // Maximum number of items to add
 
-// Check if item on page contains target string
-function checkItemAndAddToCart(itemElement) {
-  const itemName = itemElement.textContent || itemElement.innerText;
-
-  if (itemName && itemName.includes(targetName)) {
-    // Find the "Add to Cart" button
-    const addToCartButton = itemElement.closest('.ItemPreview').querySelector('.ItemPreview-mainAction');
-    if (addToCartButton) {
-      addToCartButton.click();  // Click the "Add to Cart" button
-    }
-  }
-}
-
-// Function to process adding items to cart
+// Function to check items and add them to the cart
 function addItemsToCart() {
   return new Promise((resolve) => {
     const itemElements = document.querySelectorAll('.ItemPreview-itemName');
-    let addedCount = 0;  // Track how many items we've added to the cart
+    let addedCount = 0;
 
-    itemElements.forEach((item, index) => {
-      if (addedCount >= maxItemsLimit) return; // Stop when max limit is reached
+    itemElements.forEach((item) => {
+      if (addedCount >= maxItemsLimit) return; // Stop if the limit is reached
 
       const itemName = item.textContent || item.innerText;
       if (itemName && itemName.includes(targetName)) {
-        checkItemAndAddToCart(item);  // Check and click the "Add to Cart" button
-        addedCount++;
-      }
-
-      // Resolve the promise when the loop finishes
-      if (index === itemElements.length - 1) {
-        setTimeout(() => resolve(addedCount), 500); // delay for UI processing
+        const addToCartButton = item.closest('.ItemPreview').querySelector('.ItemPreview-mainAction');
+        if (addToCartButton) {
+          addToCartButton.click(); // Click the "Add to Cart" button
+          addedCount++;
+        }
       }
     });
 
-    // Handle cases where there are no matching items
-    if (itemElements.length === 0) resolve(0);
+    // Resolve the promise with the final count
+    setTimeout(() => resolve(addedCount), 450); // UI Refresh
   });
 }
 
-// SHIFT + D (Add items to cart and redirect)
-document.addEventListener('keydown', async function (event) {
+// Event listener for SHIFT + D
+document.addEventListener('keydown', async (event) => {
   if (event.shiftKey && event.key === 'D') {
-    event.preventDefault();  // Prevent default action
+    event.preventDefault();
 
-    const addedCount = await addItemsToCart();  // Wait for items to be added to the cart
+    // Add items to the cart and get the count
+    const addedCount = await addItemsToCart();
+    console.log(`Items added to cart: ${addedCount}`); // Debug log in console
 
-    if (addedCount > 0) {
-      window.location.href = "https://skinport.com/cart";  // Redirect to cart page
+    // Redirect if more than 1 item is added
+    if (addedCount > 1) {
+      console.log('Redirecting to cart in 900ms...');
+      setTimeout(() => {
+        window.location.href = 'https://skinport.com/cart';
+      }, 900); // Redirect after 900ms
     } else {
-      alert('No matching items found to add to the cart.');
+      alert('No matching items found or not enough items to redirect.');
     }
   }
 });
