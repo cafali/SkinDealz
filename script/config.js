@@ -1,4 +1,16 @@
-//WEBSITE UI SETTINGS
+//WEBSITE SETTINGS & UI
+
+//LIVE Auto ON
+setTimeout(() => {
+    const marketLink = document.querySelector('.HeaderContainer-link.HeaderContainer-link--market');
+    const liveLink = document.createElement('a');
+    liveLink.textContent = 'Live';
+    liveLink.href = 'https://skinport.com/market?sort=date&order=desc';
+    liveLink.className = 'HeaderContainer-link';
+    liveLink.style.marginLeft = '0px';
+  
+    marketLink.parentNode.insertBefore(liveLink, marketLink.nextSibling);
+  }, 500); // 100 ms delay
 
 //hide side panel on live page
 setTimeout(function() {
@@ -63,7 +75,7 @@ setTimeout(function() {
 
 //WEBSITE ITEM FILTER
 
-//price filter (lowest price)
+//price filter (lowest price) (SHIF+C)
 function hideItemsBasedOnPrice() {
     let items = document.querySelectorAll('.CatalogPage-item.CatalogPage-item--grid');
     let itemsToHide = [];
@@ -102,7 +114,7 @@ document.addEventListener('keydown', function(event) {
 });
 
 
-// percent filter
+// percent filter (SHIF+X)
 function hideLowDiscountItems() {
     const items = Array.from(document.querySelectorAll('.CatalogPage-item'));
     let index = 0;
@@ -137,7 +149,7 @@ document.addEventListener('keydown', function(event) {
 });
 
 
-//SHIFT + T (Scroll TOP)
+//Scroll TOP (SHIFT+T)
 document.addEventListener('keydown', function(event) {
     if (event.shiftKey && (event.key === 't' || event.key === 'T')) {
       window.scrollTo({

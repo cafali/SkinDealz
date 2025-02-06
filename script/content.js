@@ -1,16 +1,4 @@
-//global live settings, checkboxes & cart settings
-
-//LIVE everywhere
-setTimeout(() => {
-  const marketLink = document.querySelector('.HeaderContainer-link.HeaderContainer-link--market');
-  const liveLink = document.createElement('a');
-  liveLink.textContent = 'Live';
-  liveLink.href = 'https://skinport.com/market?sort=date&order=desc';
-  liveLink.className = 'HeaderContainer-link';
-  liveLink.style.marginLeft = '0px';
-
-  marketLink.parentNode.insertBefore(liveLink, marketLink.nextSibling);
-}, 500); // 100 ms delay
+//global live settings, auto check checkboxes & cart settings
 
 //shift to cart
 function handleAddToCartClick() {
