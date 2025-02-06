@@ -95,7 +95,7 @@ function hideItemsBasedOnPrice() {
 
 // SHIFT + C
 document.addEventListener('keydown', function(event) {
-    if (event.shiftKey && event.key === 'C') {
+    if (event.shiftKey && event.key.toLowerCase() === 'c') {
         event.preventDefault(); 
         hideItemsBasedOnPrice(); 
     }
@@ -130,7 +130,7 @@ function hideLowDiscountItems() {
 
 // SHIFT + X (Percent)
 document.addEventListener('keydown', function(event) {
-    if (event.shiftKey && event.key === 'X') {
+    if (event.shiftKey && event.key.toLowerCase() === 'x') {
         event.preventDefault();
         hideLowDiscountItems();
     }
@@ -139,14 +139,14 @@ document.addEventListener('keydown', function(event) {
 
 //SHIFT + T (Scroll TOP)
 document.addEventListener('keydown', function(event) {
-    if (event.shiftKey && event.key === 'T') {
+    if (event.shiftKey && (event.key === 't' || event.key === 'T')) {
       window.scrollTo({
         top: 0,
         left: 0,
         behavior: 'smooth'
       });
     }
-  });
+});
   
 
 

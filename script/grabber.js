@@ -28,9 +28,9 @@ function addItemsToCart() {
   });
 }
 
-// Event listener for SHIFT + D
+// Event listener for SHIFT + D (case insensitive)
 document.addEventListener('keydown', async (event) => {
-  if (event.shiftKey && event.key === 'D') {
+  if (event.shiftKey && event.key.toLowerCase() === 'd') {
     event.preventDefault();
 
     // Add items to the cart and get the count
