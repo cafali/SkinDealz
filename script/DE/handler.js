@@ -12,7 +12,6 @@ const klarnaClickInterval = setInterval(() => {
 
     if (klarnaButton) {
         klarnaButton.click(); // click button if found
-        console.log("Clicked on Klarna button.");
         clearInterval(klarnaClickInterval);
     }
 }, getRandomInterval()); // randomize check interval (ms)
@@ -26,7 +25,6 @@ const klarnaContinueClickInterval = setInterval(() => {
 
     if (klarnaContinueButton) {
         klarnaContinueButton.click(); // Click button if found
-        console.log("Clicked on 'Continue to Pay now with Klarna' button.");
         clearInterval(klarnaContinueClickInterval); // Stop interval after clicking
     }
 }, getRandomInterval()); // Randomize check interval

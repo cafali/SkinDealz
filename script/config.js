@@ -27,8 +27,6 @@ function replaceButton() {
         button.innerHTML = 'LIVE by SkinDealz';
         button.style.backgroundColor = '#ed407a';
         button.style.borderColor = '#ed407a';
-    } else {
-        console.log("Button not found.");
     }
 }
 
@@ -40,8 +38,6 @@ function clickLiveButton() {
 
     if (liveButton) {
         liveButton.click();
-    } else {
-        console.log("Live button not found.");
     }
 }
 

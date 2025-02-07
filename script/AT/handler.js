@@ -34,16 +34,13 @@ function checkAndSelect() {
     var dropdown = document.querySelector('.adyen-checkout__dropdown__list');
     var options = dropdown ? dropdown.querySelectorAll('.adyen-checkout__dropdown__element') : null;
     if (dropdown && options && options.length > 0) {
-        console.log("Dropdown and options are present. Proceeding with selection...");
         options.forEach(function(option) {
             if (option.textContent.trim() === 'BAWAG P.S.K. Gruppe') {
                 option.setAttribute('aria-selected', 'true');
                 option.click();
-                console.log("BAWAG GROUP option selected.");
             }
         });
     } else {
-        console.log("Dropdown or options are missing. Waiting...");
         setTimeout(checkAndSelect, 2000);
     }
 }
@@ -80,4 +77,3 @@ continuouslyClickButton(5);
 setTimeout(function() {
     window.open('https://skinport.com/market?sort=date&order=desc', '_self');
 }, 4500);
-
