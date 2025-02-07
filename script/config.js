@@ -1,6 +1,7 @@
-//WEBSITE SETTINGS & UI
+// WEBSITE SETTINGS & UI
+// adjust values to your liking - delay, price, percent, etc.
 
-//LIVE Auto ON
+// LIVE Auto ON
 setTimeout(() => {
     const marketLink = document.querySelector('.HeaderContainer-link.HeaderContainer-link--market');
     const liveLink = document.createElement('a');
@@ -10,16 +11,15 @@ setTimeout(() => {
     liveLink.style.marginLeft = '0px';
   
     marketLink.parentNode.insertBefore(liveLink, marketLink.nextSibling);
-  }, 500); // 100 ms delay
+  }, 500); // execute 500ms after page loads
 
-setTimeout(function() {  //hide side panel on live page (filters etc.)
+setTimeout(function() {  // hide side panel on live page (filters etc.)
     document.querySelectorAll('div.CatalogPage-filter, div.CatalogPage-filterBg').forEach(function(element) {
         element.style.display = 'none';
     });
-}, 500); // delay in ms
+}, 500); // execute 500ms after page loads
 
-
-//change live button status and color to SKINDEALZ
+// change live button status and color to SKINDEALZ
 function replaceButton() {
     var button = document.querySelector('.LiveBtn.LiveBtn--isActive');
 
@@ -32,7 +32,7 @@ function replaceButton() {
 
 setTimeout(replaceButton, 3000); // delay in ms
 
-//click live button on live page
+// click live button on live page
 function clickLiveButton() {
     const liveButton = document.querySelector('.LiveBtn');
 
@@ -45,7 +45,7 @@ if (window.location.href === "https://skinport.com/market?sort=date&order=desc")
     setTimeout(clickLiveButton, 1500); // delay in ms
 }
 
-//change logo on website
+// change logo on website
 setTimeout(function() {
     var svgLogo = document.querySelector('.HeaderContainer-logo.logo');
     if (svgLogo) {
@@ -71,9 +71,9 @@ setTimeout(function() {
 // SHIFT + D Grabber
 
 
-//WEBSITE ITEM FILTER
+// WEBSITE ITEM FILTER
 
-//price filter (lowest price) (SHIF+C)
+// price filter (lowest price) (SHIF+C)
 function hideItemsBasedOnPrice() {
     let items = document.querySelectorAll('.CatalogPage-item.CatalogPage-item--grid');
     let itemsToHide = [];
@@ -111,7 +111,6 @@ document.addEventListener('keydown', function(event) {
     }
 });
 
-
 // percent filter (SHIF+X)
 function hideLowDiscountItems() {
     const items = Array.from(document.querySelectorAll('.CatalogPage-item'));
@@ -125,7 +124,7 @@ function hideLowDiscountItems() {
             if (discountElement) {
                 const discountValue = parseInt(discountElement.textContent.replace('−', '').trim());
 
-                if (discountValue < 21) {  // Adjust Percent (default lower then 21% - hide)
+                if (discountValue < 21) {  // adjust Percent (default lower then 21% - hide)
                     item.style.display = 'none'; 
                 }
             }
@@ -146,8 +145,7 @@ document.addEventListener('keydown', function(event) {
     }
 });
 
-
-//Scroll TOP (SHIFT+T)
+// Scroll TOP (SHIFT+T)
 document.addEventListener('keydown', function(event) {
     if (event.shiftKey && (event.key === 't' || event.key === 'T')) {
       window.scrollTo({

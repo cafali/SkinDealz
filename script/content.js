@@ -1,6 +1,6 @@
-//global live settings, auto check checkboxes & cart settings
+// global live settings, auto check checkboxes & cart settings
 
-//shift to cart
+// shift to cart
 function handleAddToCartClick() {
   window.location.href = "https://skinport.com/cart";
 }
@@ -11,14 +11,14 @@ document.addEventListener("click", function(event) {
   }
 });
 
-//go to cart
+// go to cart
 window.addEventListener('load', function() {
   if (window.location.href === "https://skinport.com/cart") {
     setTimeout(checkAllCheckboxes, 500);
   }
 });
 
-//check checkboxes (tradelock + cancel)
+// check checkboxes (tradelock + cancel)
 function checkAllCheckboxes() {
   const tradeLockCheckbox = document.querySelector('#cb-tradelock-1');  //tradelock box
   const cancellationCheckbox = document.querySelector('#cb-cancellation-2'); //canceletion box
@@ -31,7 +31,7 @@ function checkAllCheckboxes() {
   }
 }
 
-//checkout button in cart when all boxes are checked
+// checkout button in cart when all boxes are checked
 window.onload = function() {
     function clickProceedToCheckout() {
         var buttons = document.querySelectorAll('button');
@@ -45,7 +45,7 @@ window.onload = function() {
     setTimeout(clickProceedToCheckout, 500);
 };
 
-//load handler.js to finish transaction
+// load handler.js to finish transaction
 function loadHandlerScript() {
     const handlerScript = document.createElement('script');
     handlerScript.src = chrome.runtime.getURL('handler.js');
