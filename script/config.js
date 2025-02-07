@@ -12,15 +12,14 @@ setTimeout(() => {
     marketLink.parentNode.insertBefore(liveLink, marketLink.nextSibling);
   }, 500); // 100 ms delay
 
-//hide side panel on live page
-setTimeout(function() {
+setTimeout(function() {  //hide side panel on live page (filters etc.)
     document.querySelectorAll('div.CatalogPage-filter, div.CatalogPage-filterBg').forEach(function(element) {
         element.style.display = 'none';
     });
 }, 500); // delay in ms
 
 
-//change live button status and color
+//change live button status and color to SKINDEALZ
 function replaceButton() {
     var button = document.querySelector('.LiveBtn.LiveBtn--isActive');
 
@@ -71,6 +70,9 @@ setTimeout(function() {
 }, 1000);
 
 
+// SHIFT + C Price filter
+// SHIFT + X  % filter
+// SHIFT + D Grabber
 
 
 //WEBSITE ITEM FILTER
@@ -159,13 +161,3 @@ document.addEventListener('keydown', function(event) {
       });
     }
 });
-  
-
-
-
-
-
-
-
-
-
