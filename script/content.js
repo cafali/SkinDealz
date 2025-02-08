@@ -55,3 +55,10 @@ function loadHandlerScript() {
 document.addEventListener('DOMContentLoaded', function() {
     loadHandlerScript();
 });
+
+// Cancel Buy (ESC)
+document.addEventListener('keydown', function(event) {
+  if (event.key === "Escape") {
+      window.location.href = "https://skinport.com/market?sort=date&order=desc";
+  }
+});
