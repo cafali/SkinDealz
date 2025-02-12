@@ -1,50 +1,66 @@
-//  Grabber 2.0
+// Grabber (discount filtering & multiple items)
 
-// Config
-const targetName = "Natus Vincere | 2020 RMR"; // Name of item (case-sensitive)
-const maxItemsLimit = 15; // Maximum number of items to add
+// config
+const targetNames = [
+  "Natus Vincere | 2020 RMR",
+  "Dreams & Nightmares Case",
+  "Revolver Case"
+]; // add as many names as needed (case-sensitive)
+const maxItemsLimit = 15; // number of items to add
+const minDiscountPercentage = 21; // discount filtering in %
 
-// Function to check items and add them to the cart
+// check items and add them to the cart
 function addItemsToCart() {
   return new Promise((resolve) => {
-    const itemElements = document.querySelectorAll('.ItemPreview-itemName');
+    const itemElements = document.querySelectorAll('.ItemPreview'); // Select entire item container
     let addedCount = 0;
 
-    itemElements.forEach((item) => {
-      if (addedCount >= maxItemsLimit) return; // Stop if the limit is reached
+    itemElements.forEach((itemContainer) => {
+      if (addedCount >= maxItemsLimit) return; // stop if limit is reached
 
-      const itemName = item.textContent || item.innerText;
-      if (itemName && itemName.includes(targetName)) {
-        const addToCartButton = item.closest('.ItemPreview').querySelector('.ItemPreview-mainAction');
-        if (addToCartButton) {
-          addToCartButton.click(); // Click the "Add to Cart" button
-          addedCount++;
-        }
-      }
+      // item-name, discount in %, and cart button
+      const nameElement = itemContainer.querySelector('.ItemPreview-itemName');
+      const discountElement = itemContainer.querySelector('.GradientLabel.ItemPreview-discount span');
+      const addToCartButton = itemContainer.querySelector('.ItemPreview-mainAction');
+
+      // ensure elements exist (name/percent/cart-button)
+      if (!nameElement || !discountElement || !addToCartButton) return;
+
+      // item name (remove extra spaces)
+      const itemName = nameElement.textContent.trim();
+      if (!targetNames.includes(itemName)) return;
+
+      // get discount percentage (remove symbols and extra spaces)
+      const discountText = discountElement.textContent.replace(/[^\d]/g, ""); // keep only numbers
+      const discountValue = parseInt(discountText, 10);
+
+      // ensure discount meets requirement
+      if (isNaN(discountValue) || discountValue < minDiscountPercentage) return;
+
+      // If conditions pass (name/percent) - add to cart
+      addToCartButton.click();
+      addedCount++;
     });
 
-    // Resolve the promise with the final count
-    setTimeout(() => resolve(addedCount), 450); // UI Refresh
+    setTimeout(() => resolve(addedCount), 450); // UI refresh
   });
 }
 
-// Event listener for SHIFT + D (case insensitive)
+// SHIFT + D
 document.addEventListener('keydown', async (event) => {
   if (event.shiftKey && event.key.toLowerCase() === 'd') {
     event.preventDefault();
 
-    // Add items to the cart and get the count
+    // add items to the cart
     const addedCount = await addItemsToCart();
-    console.log(`Items added to cart: ${addedCount}`); // Debug log in console
 
-    // Redirect if more than 1 item is added
+    // redirect if more than 1 item is added
     if (addedCount > 1) {
-      console.log('Redirecting to cart in 900ms...');
       setTimeout(() => {
         window.location.href = 'https://skinport.com/cart';
-      }, 900); // Redirect after 900ms
+      }, 900); // redirect to cart after 900ms
     } else {
-      alert('No matching items found or not enough items to redirect.');
+      alert('SKINDEALZ GRABBER - No matching items found or not enough items to redirect.');
     }
   }
 });
