@@ -69,6 +69,7 @@ setTimeout(function() {
 // SHIFT + C Price filter
 // SHIFT + X  % filter
 // SHIFT + D Grabber
+// Q Empty Cart
 
 
 // WEBSITE ITEM FILTER
@@ -155,3 +156,31 @@ document.addEventListener('keydown', function(event) {
       });
     }
 });
+
+// Empty Cart (press Q)
+async function simulateClicks() {
+    const clickButton = (selector) => {
+      const button = document.querySelector(selector);
+      if (button) {
+        button.click();
+      }
+    };
+  
+    // cart button
+    clickButton('.CartButton-button');
+    await new Promise(resolve => setTimeout(resolve, 1000)); // Wait for 1 second
+  
+    // clear cart button
+    clickButton('.CartDropdown-clear .ButtonSimple');
+    await new Promise(resolve => setTimeout(resolve, 1000)); // Wait for 1 second
+  
+    // close cart button
+    clickButton('.CartDropdown-close .Cross');
+  }
+  
+  // press Q to empty cart
+  document.addEventListener('keydown', (event) => {
+    if (event.key.toLowerCase() === 'q') {
+      simulateClicks();
+    }
+  });
