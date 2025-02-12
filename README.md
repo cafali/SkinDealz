@@ -15,7 +15,10 @@ SkinDealz is a browser extension aimed at simplifying deal-hunting in various ga
 **Keyboard Shortcuts**  
 1. **SHIFT+C** Remove items cheaper than 0.13€ (LIVE PAGE)  
 2. **SHIFT+X** Remove items with discounts lower than 21% (LIVE PAGE)  
-3. **SHIFT+T** Auto Scroll to Top (LIVE PAGE)  
+3. **SHIFT+T** Auto Scroll to Top (LIVE PAGE)
+4. **SHIFT+D** Grab multiple items at once
+5. **ESC** Cancel automated payment process
+6. **Q** Empty cart  
 
 ![SkinDealz](https://github.com/user-attachments/assets/4f5bb1a7-d21c-4993-be7f-a166d9107b07)
 
