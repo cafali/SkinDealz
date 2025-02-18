@@ -6,11 +6,11 @@ function getRandomInterval(min = 385, max = 440) {     //adjust if needed
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-// check for the Klarna button (Q4 2024 new method)
+// check for the Bank Transfer button (Q1 2025 new method)
 const klarnaClickInterval = setInterval(() => {
     // locate by text content
     const klarnaButton = Array.from(document.querySelectorAll('button')).find(button =>
-        button.textContent.includes("Pay now with Klarna.") // Locate button by text content
+        button.textContent.includes("Online bank transfer.") // Locate button by text content
     );
 
     if (klarnaButton) {
@@ -23,7 +23,7 @@ const klarnaClickInterval = setInterval(() => {
 const klarnaContinueClickInterval = setInterval(() => {
     // Locate button by text
     const klarnaContinueButton = Array.from(document.querySelectorAll('button')).find(button =>
-        button.textContent.includes("Continue to Pay now with Klarna.")
+        button.textContent.includes("Continue to Online bank transfer.")
     );
 
     if (klarnaContinueButton) {
