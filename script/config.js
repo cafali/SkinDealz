@@ -1,7 +1,7 @@
-// WEBSITE SETTINGS & UI
-// adjust values to your liking - delay, price, percent, etc.
+// SKINDEALZ CONFIG (config.js) - permission: LIVE page
+// WEBSITE SETTINGS & UI - adjust values to your liking - delay, price, percent, etc.
 
-// LIVE Auto ON
+// LIVE Auto ON (LIVE BY SKINDEALZ)
 setTimeout(() => {
     const marketLink = document.querySelector('.HeaderContainer-link.HeaderContainer-link--market');
     const liveLink = document.createElement('a');
@@ -45,7 +45,7 @@ if (window.location.href === "https://skinport.com/market?sort=date&order=desc")
     setTimeout(clickLiveButton, 1500); // delay in ms
 }
 
-// change logo on website
+// change deafult logo on website (not affecting website holiday events)
 setTimeout(function() {
     var svgLogo = document.querySelector('.HeaderContainer-logo.logo');
     if (svgLogo) {
@@ -63,11 +63,12 @@ setTimeout(function() {
         
         svgLogo.parentNode.replaceChild(newLogoLink, svgLogo);
     }
-}, 1000);
+}, 1000); //wait for the page to load - change after 1000ms
 
 
 // SHIFT + C Price filter
 // SHIFT + X  % filter
+// SHIFT + T Scroll TOP
 // SHIFT + D Grabber
 // Q Empty Cart
 
@@ -166,15 +167,15 @@ async function simulateClicks() {
       }
     };
   
-    // cart button
+    // click cart button
     clickButton('.CartButton-button');
     await new Promise(resolve => setTimeout(resolve, 1000)); // Wait for 1 second
   
-    // clear cart button
+    // clear cart
     clickButton('.CartDropdown-clear .ButtonSimple');
     await new Promise(resolve => setTimeout(resolve, 1000)); // Wait for 1 second
   
-    // close cart button
+    // close cart
     clickButton('.CartDropdown-close .Cross');
   }
   

@@ -1,4 +1,4 @@
-// Region AT/EU 
+// Region AT/EU - permission: CART page
 // to use this script, you need to change the region/path in the manifest.json
 
 // select payment method EPSButton (AT)

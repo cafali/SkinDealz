@@ -1,4 +1,4 @@
-// Region DE/EU 
+// Region DE/EU - permission: CART page
 // to use this script, you need to change the region/path in the manifest.json
 
 // random interval between 385-440 ms when selecting elements

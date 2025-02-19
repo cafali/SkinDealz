@@ -1,3 +1,4 @@
+// SKINDEALZ CONTENT (content.js) - permission: WEBSITE global
 // global live settings, auto check checkboxes & cart settings
 
 // shift to cart

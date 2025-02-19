@@ -1,4 +1,4 @@
-// SKINDEALZ GRABBER
+// SKINDEALZ GRABBER (grabber.js) - permission: WEBSITE global
 
 // -----------------------------------CONFIG----------------------------------------
 
@@ -14,11 +14,10 @@ const targetNames = [
 // MAX ITEM AMOUNT (LIMIT) (DEFAULT: 15)
 const maxItemsLimit = 15; 
 
-// MINIMUM DISCOUNT PERCENTAGE (DEFAULT: 21%)
+// MINIMUM DISCOUNT PERCENTAGE (-XX%) (DEFAULT: 21)
 const minDiscountPercentage = 21;
 
 // ----------------------------------------------------------------------------------
-
 
 // check items and add them to the cart
 function addItemsToCart() {
