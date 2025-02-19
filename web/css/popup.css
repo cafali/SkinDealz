@@ -33,7 +33,7 @@ body::after {
     );
   background-size: 100% 20px, 20px 100%; 
   z-index: -1; 
-  opacity: 0.2; 
+  opacity: 0.0; 
 }
 
 
@@ -42,8 +42,6 @@ body::after {
       margin: 0 auto;
       width: 102px; 
       height: 102px; 
-      border-radius: 50%; 
-      border: 6px solid #ffffff; 
       position: relative; 
       z-index: 1; 
     }
@@ -54,7 +52,7 @@ body::after {
       font-weight: bold; 
       background-color: #f23a7e; 
       padding: 7.5px; 
-      border-radius: 15px; 
+      border-radius: 20px; 
       font-family: "Bahnschrift", sans-serif; 
       font-size: 18px; 
       margin-top: 15px; 
@@ -69,7 +67,7 @@ body::after {
       text-transform: uppercase; 
       font-size: 27px; 
       letter-spacing: 1.5px; 
-      margin-top: 30px; 
+      margin-top: 10px; 
     }
 
     p {
