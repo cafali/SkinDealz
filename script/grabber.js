@@ -70,7 +70,7 @@ document.addEventListener('keydown', async (event) => {
         window.location.href = 'https://skinport.com/cart';
       }, 900); // redirect to cart after 900ms
     } else {
-      alert('SKINDEALZ GRABBER - No matching items found or not enough items to redirect.');
+      alert('SKINDEALZ GRABBER - No matching items found or not enough items to redirect');
     }
   }
 });
