@@ -1,11 +1,14 @@
 
-![Skindealzbanner](https://github.com/user-attachments/assets/26def360-7e46-47f1-9ba2-cf1a088364d7)
+![banner](https://github.com/user-attachments/assets/bcd73d49-b698-4a51-b4c5-d4472c826ff1)
+
+
 
 ## SkinDealz Extension:
 
 SkinDealz is a browser extension aimed at simplifying deal-hunting in various gaming markets, particularly on the LIVE market. By holding the SHIFT key while adding items to your CART, SkinDealz automates the purchasing process, reducing the time to under 2900ms for the entire procedure.
 
-![Skinport](https://github.com/user-attachments/assets/4cd30fb4-fe1d-4f5e-a773-65e21e10fb94)
+![350769279-4cd30fb4-fe1d-4f5e-a773-65e21e10fb94](https://github.com/user-attachments/assets/042e0ded-e83c-4bcc-a749-62fdae448d5d)
+
 
 **Quick Start Guide**  
 1. **LANGUAGE:** ENSURE THAT THE SITE LANGUAGE IS SET TO ENGLISH.  
@@ -19,8 +22,6 @@ SkinDealz is a browser extension aimed at simplifying deal-hunting in various ga
 4. **SHIFT+D** Grab multiple items at once
 5. **ESC** Cancel automated payment process
 6. **Q** Empty cart  
-
-![SkinDealz](https://github.com/user-attachments/assets/4f5bb1a7-d21c-4993-be7f-a166d9107b07)
 
 ```
 Note: May differ from the current version
