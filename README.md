@@ -24,6 +24,9 @@ SkinDealz is a browser extension aimed at simplifying deal-hunting in various ga
 5. **ESC** Cancel automated payment process
 6. **Q** Empty cart  
 
+![Untitled](https://github.com/user-attachments/assets/23e25ba4-73e6-44af-86e4-67fdd0bd03e3)
+
+
 ```
 Note: May differ from the current version
 ```
