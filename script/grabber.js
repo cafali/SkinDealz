@@ -1,13 +1,24 @@
-// Grabber (discount filtering & multiple items)
+// SKINDEALZ GRABBER
 
-// config
+// -----------------------------------CONFIG----------------------------------------
+
+// ITEM GRABBER SETTINGS
+
+// ITEM LIST (CASE-SENSITIVE)
 const targetNames = [
   "Natus Vincere | 2020 RMR",
   "Dreams & Nightmares Case",
   "Revolver Case"
-]; // add as many names as needed (case-sensitive)
-const maxItemsLimit = 15; // number of items to add
-const minDiscountPercentage = 21; // discount filtering in %
+];
+
+// MAX ITEM AMOUNT (LIMIT) (DEFAULT: 15)
+const maxItemsLimit = 15; 
+
+// MINIMUM DISCOUNT PERCENTAGE (DEFAULT: 21%)
+const minDiscountPercentage = 21;
+
+// ----------------------------------------------------------------------------------
+
 
 // check items and add them to the cart
 function addItemsToCart() {
