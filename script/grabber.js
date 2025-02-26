@@ -4,18 +4,18 @@
 
 // ITEM GRABBER SETTINGS
 
+// MAX ITEM AMOUNT (LIMIT) (DEFAULT: 15)
+const maxItemsLimit = 15; 
+
+// MINIMUM DISCOUNT PERCENTAGE (-XX%) (DEFAULT: 21)
+const minDiscountPercentage = 21;
+
 // ITEM LIST (CASE-SENSITIVE)
 const targetNames = [
   "Natus Vincere | 2020 RMR",
   "Dreams & Nightmares Case",
   "Revolver Case"
 ];
-
-// MAX ITEM AMOUNT (LIMIT) (DEFAULT: 15)
-const maxItemsLimit = 15; 
-
-// MINIMUM DISCOUNT PERCENTAGE (-XX%) (DEFAULT: 21)
-const minDiscountPercentage = 21;
 
 // ----------------------------------------------------------------------------------
 
