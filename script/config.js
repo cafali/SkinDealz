@@ -1,5 +1,5 @@
 // SKINDEALZ CONFIG (config.js) - permission: LIVE page
-// WEBSITE SETTINGS & UI - adjust values to your liking - delay, price, percent, etc.
+// WEBSITE SETTINGS, SHORTCUTS & UI - adjust values to your liking - delay, price, percent, etc.
 
 // LIVE Auto ON (LIVE BY SKINDEALZ)
 setTimeout(() => {
@@ -68,9 +68,9 @@ setTimeout(function() {
 
 // SHIFT + C Price filter
 // SHIFT + X  % filter
-// SHIFT + T Scroll TOP
 // SHIFT + D Grabber
 // Q Empty Cart
+// T Scroll TOP
 
 
 // WEBSITE ITEM FILTER
@@ -147,17 +147,6 @@ document.addEventListener('keydown', function(event) {
     }
 });
 
-// Scroll TOP (SHIFT+T)
-document.addEventListener('keydown', function(event) {
-    if (event.shiftKey && (event.key === 't' || event.key === 'T')) {
-      window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
-      });
-    }
-});
-
 // Empty Cart (press Q)
 async function simulateClicks() {
     const clickButton = (selector) => {
@@ -185,3 +174,29 @@ async function simulateClicks() {
       simulateClicks();
     }
   });
+
+
+  // Scroll TOP (T)
+document.addEventListener('keydown', function(event) {
+    if (event.key.toLowerCase() === 't') {
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        });
+    }
+});
+
+// Redirect to CART (2xSHIFT)
+
+let lastShiftPress = 0;
+
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Shift") {
+        let now = Date.now();
+        if (now - lastShiftPress < 300) {
+            window.location.href = "https://skinport.com/cart";
+        }
+        lastShiftPress = now;
+    }
+});
