@@ -65,12 +65,14 @@ setTimeout(function() {
     }
 }, 1000); //wait for the page to load - change after 1000ms
 
+// -----------------------Keyboard Shortcuts (LIVE PAGE)-----------------------
 
 // SHIFT + C Price filter
 // SHIFT + X  % filter
 // SHIFT + D Grabber
 // Q Empty Cart
 // T Scroll TOP
+// 2xSHIFT CART
 
 
 // WEBSITE ITEM FILTER
