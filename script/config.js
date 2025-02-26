@@ -74,8 +74,7 @@ setTimeout(function() {
 // T Scroll TOP
 // 2xSHIFT CART
 
-
-// WEBSITE ITEM FILTER
+// WEBSITE ITEM FILTER  
 
 // price filter (lowest price) (SHIF+C)
 function hideItemsBasedOnPrice() {
