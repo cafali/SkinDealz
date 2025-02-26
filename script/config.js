@@ -191,13 +191,25 @@ document.addEventListener('keydown', function(event) {
 // Redirect to CART (2xSHIFT)
 
 let lastShiftPress = 0;
+let shiftPressed = false;
 
 document.addEventListener("keydown", (event) => {
-    if (event.key === "Shift") {
+    if (event.key === "Shift" && !shiftPressed) {
         let now = Date.now();
         if (now - lastShiftPress < 300) {
-            window.location.href = "https://skinport.com/cart";
+            // dont redirect when cart item = 0
+            const cartCount = document.querySelector(".CartButton-count");
+            if (cartCount && parseInt(cartCount.textContent) > 0) {
+                window.location.href = "https://skinport.com/cart";
+            }
         }
         lastShiftPress = now;
+        shiftPressed = true;  
+    }
+});
+
+document.addEventListener("keyup", (event) => {
+    if (event.key === "Shift") {
+        shiftPressed = false;  
     }
 });
